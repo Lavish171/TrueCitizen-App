@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView questiontextview;
      ImageButton next_button;
     ImageButton back_button;
+    ImageButton pausebutton,resumebutton;
     Button timerbutton;
     TextView currentscore;
     int score=0;
@@ -41,6 +42,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       new Question(R.string.question_cm,true),
       new Question(R.string.question_leastdenselypopulated,true),
      };
+     public void resume(View view)
+     {
+         super.onResume();
+     }
+    public void pause(View view)
+    {
+        super.onPause();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         back_button=findViewById(R.id.backbutton);
         timerbutton=findViewById(R.id.timerbutton);
         currentscore=findViewById(R.id.score);
+        pausebutton=findViewById(R.id.pause);
+        resumebutton=findViewById(R.id.resume);
         /*falsebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,6 +136,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(currentquestionindex==-1) currentquestionindex=0;
                 updatequesback();
                 Log.i("Current index",Integer.toString(currentquestionindex));
+            case R.id.pause:
+                 super.onPause();
+            case R.id.resume:
+                super.onResume();
             default:
                 Log.i("Sorry ","Next time");
         }
