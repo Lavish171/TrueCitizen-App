@@ -27,7 +27,7 @@
         android:gravity="center"
         android:text="@string/question_declaration"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold" />
        <LinearLayout
            android:layout_width="wrap_content"
@@ -38,12 +38,16 @@
            android:id="@+id/truebutton"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="@string/true_button" />
+           android:text="@string/true_button"
+               android:textSize="30sp"
+               />
          <Button
           android:id="@+id/falsebutton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="@string/false_button" />
+          android:text="@string/false_button"
+             android:textSize="30sp"
+            />
          </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -63,6 +67,22 @@
             android:contentDescription="@string/next_button"
             android:text="@string/next_button"/>
 </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/resume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="resume"
+            android:src="@drawable/resume"/>
+        <ImageButton
+            android:id="@+id/pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="pause"
+            android:src="@drawable/newpause"/>
+    </LinearLayout>
     <Button
         android:id="@+id/timerbutton"
         android:layout_width="wrap_content"
